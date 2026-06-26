@@ -22,6 +22,7 @@ interface PaginatedResponse<T> {
 interface InvoiceStats {
   todaySales: number;
   monthlySales: number;
+  totalCustomers: number;
   totalInvoices: number;
   paidInvoices: number;
   pendingInvoices: number;

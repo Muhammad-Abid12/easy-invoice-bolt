@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthLayout, DashboardLayout } from '../components/layout';
 import { LoginPage, RegisterPage, ForgotPasswordPage } from '../pages/auth';
 import { CustomerDashboard, TrialExpiredPage } from '../pages/dashboard';

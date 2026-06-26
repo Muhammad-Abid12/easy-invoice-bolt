@@ -12,6 +12,7 @@ interface RegisterData {
   password: string;
   name: string;
   phone?: string;
+  deviceInfo?: DeviceInfo;
   company?: {
     name: string;
     address: string;

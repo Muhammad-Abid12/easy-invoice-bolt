@@ -368,8 +368,3 @@ const DashboardSkeleton: React.FC = () => (
 );
 
 export default CustomerDashboard;
-
-const InputProps = { rightIcon: React.ReactNode } & (
-  | { rightIcon: React.ReactNode }
-  | {}
-) & React.InputHTMLAttributes<HTMLInputElement>;

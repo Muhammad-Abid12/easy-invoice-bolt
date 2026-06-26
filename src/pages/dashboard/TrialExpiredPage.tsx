@@ -13,7 +13,7 @@ const TrialExpiredPage: React.FC = () => {
     user?.trialEndDate && new Date(user.trialEndDate) <= new Date()
       ? 'Your 30-day free trial has expired'
       : null,
-    user?.invoiceCount >= user?.maxInvoices
+    (user?.invoiceCount ?? 0) >= (user?.maxInvoices ?? 10)
       ? 'You have reached the maximum of 10 free invoices'
       : null,
   ].filter(Boolean);

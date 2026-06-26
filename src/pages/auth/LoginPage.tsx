@@ -76,28 +76,25 @@ const LoginPage: React.FC = () => {
           {...register('email')}
         />
 
-        <Input
-          label="Password"
-          type={showPassword ? 'text' : 'password'}
-          placeholder="Enter your password"
-          icon={<FiLock className="w-5 h-5" />}
-          error={errors.password?.message}
-          iconPosition="left"
-          {...register('password', {
-            onChange: () => clearError?.(),
-          })}
-          {...({
-            rightIcon: (
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="text-secondary-400 hover:text-secondary-600 dark:hover:text-secondary-300"
-              >
-                {showPassword ? <FiEyeOff className="w-5 h-5" /> : <FiEye className="w-5 h-5" />}
-              </button>
-            ),
-          } as unknown as InputProps)}
-        />
+        <div className="relative">
+          <Input
+            label="Password"
+            type={showPassword ? 'text' : 'password'}
+            placeholder="Enter your password"
+            icon={<FiLock className="w-5 h-5" />}
+            error={errors.password?.message}
+            {...register('password', {
+              onChange: () => clearError?.(),
+            })}
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-9 text-secondary-400 hover:text-secondary-600 dark:hover:text-secondary-300"
+          >
+            {showPassword ? <FiEyeOff className="w-5 h-5" /> : <FiEye className="w-5 h-5" />}
+          </button>
+        </div>
 
         <div className="flex items-center justify-between">
           <label className="flex items-center">

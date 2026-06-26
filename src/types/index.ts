@@ -96,7 +96,7 @@ export interface Invoice {
   shippingAmount: number;
   total: number;
   currency: string;
-  status: 'draft' | 'sent' | 'paid' | 'overdue' | 'cancelled';
+  status: 'draft' | 'sent' | 'pending' | 'paid' | 'overdue' | 'cancelled';
   issueDate: Date;
   dueDate: Date;
   notes?: string;

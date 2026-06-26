@@ -26,7 +26,7 @@ export const customerService = {
     return response.data;
   },
 
-  async create(data: Omit<Customer, '_id' | 'userId' | 'createdAt' | 'updatedAt'>): Promise<Customer> {
+  async create(data: { name: string; email: string; phone: string; address: string; city: string; country?: string; company?: string; state?: string; postalCode?: string; notes?: string }): Promise<Customer> {
     const response = await api.post('/customers', data);
     return response.data;
   },
