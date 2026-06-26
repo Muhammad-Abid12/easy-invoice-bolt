@@ -6,6 +6,7 @@ import { FiSave, FiUser, FiBriefcase, FiLock, FiSun, FiMoon } from 'react-icons/
 import { FaWhatsapp } from 'react-icons/fa';
 import { useAuth, useTheme } from '../../context';
 import { Card, Button, Input, PageHeader } from '../../components/ui';
+import { authService } from '../../services';
 import toast from 'react-hot-toast';
 
 const profileSchema = z.object({
@@ -101,7 +102,6 @@ const SettingsPage: React.FC = () => {
   const onPasswordSubmit = async (data: PasswordForm) => {
     setLoading(true);
     try {
-      const { authService } = await import('../../services');
       await authService.changePassword(data.currentPassword, data.newPassword);
       toast.success('Password changed');
       passwordForm.reset();
